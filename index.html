@@ -1,15 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <!-- Links favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/apple-touch-icon.png" type="image/x-icon">
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Portifólio</title>
 </head>
 
 <body>
-    <h1>Kleilson dos Santos</h1>
+    <div class="main-container">
+        <div class="loader">
+            <img src="./assets/img/load1.gif" alt="Load pag">
+        </div>
+        <div class="hamburguer">
+            <div id="line1" class="line"></div>
+            <div id="line2" class="line"></div>
+            <div id="line3" class="line"></div>
+            <span>Fechar</span>
+        </div>
+        <header>
+            <div class="wrapper">
+                <img class="img-wrapper" src="./assets/img/bg.jpg" alt="">
+                <div class="banner">
+                    <h1>Full Stack Devenloper</h1>
+                    <p>Kleilson dos Santos</p>
+                    <button>Saiba mais</button>
+                </div>
+            </div>
+        </header>
+
+
+        <aside class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                    <li class="menu-item"><a href="#conhecimentos" class="menu-link">Conhecimentos</a></li>
+                    <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
+                    <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Orçamento</a></li>
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/kleilson-santos-5256501a2/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5575991610301" target="_blank"><i
+                        class="fab fa-whatsapp "></i></a>
+                <a href="https://github.com/KleilsonSantos " target="_blank "><i class="fab fa-github "></i></a>
+                <a href="https://www.instagram.com/kleilsonsantos.dev/" target="_blank "><i
+                        class="fab fa-instagram "></i></a>
+            </div>
+        </aside>
+
+        <main class="sessao-conhecimentos ">
+            <div class="sessao-header ">
+                <h1 id="conhecimentos">Conhecimentos</h1>
+            </div>
+            <div class="conhecimentos">
+                <div class="conhecimento">
+                    <div class="conhecimento-header ">
+                        <i class="fab fa-html5 "></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class="conhecimento">
+                    <div class="conhecimento-header">
+                        <i class="fab fa-css3 "></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class="conhecimento ">
+                    <div class="conhecimento-header ">
+                        <i class="fab fa-js "></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class="conhecimento ">
+                    <div class="conhecimento-header ">
+                        <i class="fab fa-node-js "></i>
+                        <h3>Node JS</h3>
+                    </div>
+                    <div class="conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class="conhecimento ">
+                    <div class="conhecimento-header ">
+                        <i class="fab fa-github "></i>
+                        <h3>Git e GitHub</h3>
+                    </div>
+                    <div class="conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class="conhecimento ">
+                    <div class=conhecimento-header ">
+                        <i class=" fab fa-bootstrap "></i>
+                        <h3>BootStrap</h3>
+                    </div>
+                    <div class=" conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam
+                            ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis
+                            laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class=" conhecimento ">
+                    <div class=" conhecimento-header ">
+                        <i class=" fab fa-java "></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class=" conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam
+                            ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis
+                            laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+
+                <div class=" conhecimento ">
+                    <div class=" conhecimento-header ">
+                        <i class=" fab fa-linux "></i>
+                        <h3>Linux</h3>
+                    </div>
+                    <div class=" conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel numquam
+                            ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis
+                            laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class=" conhecimento ">
+                    <div class=" conhecimento-header ">
+                        <i class=" fab fa-docker "></i>
+                        <h3>Docker</h3>
+                    </div>
+                    <div class=" conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel
+                            numquam
+                            ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis
+                            laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+
+                <div class=" conhecimento ">
+                    <div class=" conhecimento-header ">
+                        <i class=" fab fa-apple "></i>
+                        <h3>Apple</h3>
+                    </div>
+                    <div class=" conhecimento-text ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ex distinctio vel
+                            numquam
+                            ipsa itaque quam tenetur aut odio, dignissimos a architecto consequuntur. Ut, quis
+                            laboriosam eius ad quos nulla?</p>
+                    </div>
+                </div>
+                <div class=" conhecimentos-img-wrapper ">
+                        <img class="conhecimentos-img-wrapper " src="./assets/img/bg2.jpg "
+                            alt="Background Conhecimentos ">
+                    </div>
+                </div>
+
+        </main>
+        <section class="sessao-projetos ">
+            <div class="sessao-header ">
+                <h1 id="projetos ">Projetos</h1>
+            </div>
+            <div class="projetos ">
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj1.jpg " alt="Projeto 1 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>ToDo List</h2>
+                        <h3>Java Script</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj1.jpg " alt="Projeto 2 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>Maratona</h2>
+                        <h3>HTML, CSS</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj3.jpg " alt="Projeto 3 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>Casa Bela</h2>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj2.jpg " alt="Projeto 3 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>Casa Bela</h2>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj3.jpg " alt="Projeto 3 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>Casa Bela</h2>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-img-wrapper ">
+                        <img src="./assets/img/proj2.jpg " alt="Projeto 3 ">
+                    </div>
+                    <div class="card-info ">
+                        <h2>Casa Bela</h2>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, iusto delectus. Dicta ex
+                            hic corporis eius provident quos magnam quis accusantium odit illum ipsa doloremque
+                            delectus, enim quasi nulla eum.</p>
+                        <button class="btn ">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="sessao-contato ">
+            <div class="sessao-header ">
+                <h1 id="contato ">Contato</h1>
+            </div>
+            
+            <div class="contato-wrapper ">
+               
+                <div class="contato ">
+                    <form action=" " id="form " method="POST " name="form ">
+                        <div class=" form-row ">
+                            <div class="form-group ">
+                                <label for="form ">Nome</label>
+                            <input type="name " class="form-control form-control-lg " id="inputName " placeholder="Your name... " name=" nome ">
+                            </div>
+                            <div class="form-group ">
+                                <label for="form ">Email</label>
+                                <input type="email " class="form-control form-control-lg " id="inputEmail4 " placeholder="Email... " name=" email ">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class=" form-group col ">
+                                <label for="form ">Telefone</label>
+                                <input type="text " class="form-control form-control-lg " id="inputCity " placeholder="Phone... " name="telefone ">
+                            </div>
+                            <div class="form-group col ">
+                                    <label for="form ">WhatsApp</label>
+                                    <input type="text " class="form-control form-control-lg " id="inputCity " placeholder="Phone... " name="whatsapp ">
+                            </div>
+                        </div>
+                        <div class="form-row ">
+                            <div class="form-group ">
+                                 <label for="form ">Mensagem</label>
+                                 <textarea type="input-textarea " class=" form-control form-control-lg " id="mensagem " placeholder="Your messager... " rows="8 " name=" mensagem "></textarea>
+                            </div>
+                        </div>
+                <button id="submit " type="submit " class="btn btn-primary ">Enviar</button>
+                </form>
+            </div>
+            <img src="./assets/img/contact-me1.jpg " alt=" ">
+    </div>
+    </section>
+    <footer class="footer-content ">
+        <p>Copyright &copy; 2022, CNTI Corporation - todos os direitos
+                    reservados.</p>
+        <div class="social-list ">
+            <ul>
+                <a href="https://www.linkedin.com/in/kleilson-santos-5256501a2/ " target="_blank "><i
+                            class="fab fa-linkedin "></i></a>
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5575991610301 " target="_blank "><i
+                            class="fab fa-whatsapp "></i></a>
+                <a href="https://github.com/KleilsonSantos " target="_blank "><i class="fab fa-github "></i></a>
+                <a href="https://www.instagram.com/kleilsonsantos.dev/ " target="_blank "><i
+                            class="fab fa-instagram "></i></a>
+            </ul>
+        </div>
+    </footer>
+    </div>
+    <script src="./assets/js/script.js "></script>
+    <!-- <script src="https://platform.linkedin.com/badges/js/profile.js " async defer type="text/javascript "></script> -->
 </body>
+
+</html>
 
 </html>
