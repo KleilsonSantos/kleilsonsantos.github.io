@@ -5,9 +5,8 @@ window.addEventListener("load", () => {
 });
 
 // Function mostra o menu hamburguer
-document.querySelector(".hamburguer").addEventListener("click", () => {
+document.querySelector(".checkbox").addEventListener("click", () => {
     document.querySelector(".main-container").classList.toggle("show-menu")
-
 })
 
 

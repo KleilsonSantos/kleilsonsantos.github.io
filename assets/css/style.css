@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&family=Concert+One&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Merriweather+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat+Alternates:ital,wght@0,200;0,300;1,200;1,300&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Mulish:ital,wght@0,200;0,300;0,500;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;500&family=Prompt:ital,wght@0,200;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,500&family=Slabo+13px&family=Slabo+27px&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
-@import url('https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css');
 * {
     margin: 0;
     padding: 0;
@@ -68,20 +67,23 @@
 }
 
 html {
+    /* A cada 1rem será considerado 10px; */
     font-size: 62.5%;
 }
 
+html,
 body {
-    min-width: 375px;
-    font-size: 1rem;
-    /* height: 100vh; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
     background-color: black;
+    text-rendering: optimizeLegibility;
 }
 
-.main-container {
-    width: 100%;
-    /* overflow: hidden; */
-    /* border: 1px solid white; */
+body {
+    font-size: 1.6rem;
+}
+
+font .main-container {
     margin: 0 auto;
 }
 
@@ -95,83 +97,91 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .loader img {
     width: 10%;
 }
 
-.hamburguer {
+.checkbox-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    position: absolute;
+}
+
+.checkbox {
+    z-index: 6;
     position: fixed;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 2.8em;
-    height: 2.8em;
-    top: 2em;
-    right: 2.2em;
-    z-index: 100;
+    justify-content: space-between;
+    top: 1.5rem;
+    right: 2rem;
     cursor: pointer;
     transition: all 1s;
 }
 
-.show-menu .hamburguer {
-    right: 22em;
-}
-
-.line {
+.checkbox .trace {
     background-color: white;
-    background-color: var(--bs-blue);
-    width: 100%;
-    height: 0.2em;
-    box-shadow: 0 0.1rem 1px black;
-    transition: transform 1s;
+    width: 1.8rem;
+    height: 0.18rem;
+    position: absolute;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    left: 0.3rem;
 }
 
-.show-menu #line1 {
-    background-color: var(--bs-blue);
-    transform: rotate(-45deg) translate(-0.38em, 0.42em);
+.checkbox .trace:nth-child(1) {
+    top: 0.3em;
+    transform: rotate(0);
 }
 
-.show-menu #line2 {
+.checkbox .trace:nth-child(2) {
+    top: 0.7em;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 1.1em;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0.7em;
+    background-color: white;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(2) {
+    transform: translateX(-50px);
+    width: 0.7em;
+    opacity: 0.1;
     visibility: hidden;
-    opacity: 0;
 }
 
-.show-menu #line3 {
-    background-color: var(--bs-blue);
-    transform: rotate(45deg) translate(-0.48rem, -0.8rem);
+#toggle:checked+.checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 0.7em;
+    background-color: white;
 }
 
-.show-menu span::before {
-    position: absolute;
-    left: -1.1rem;
-    content: "";
-    border-right: 0.5rem solid var(--bs-blue);
-    border-top: 0.6rem solid transparent;
-    border-left: 0.6rem solid transparent;
-    border-bottom: 0.6rem solid transparent;
+.show-menu .checkbox {
+    right: 22rem;
 }
 
-.hamburguer span {
-    display: flex;
-    padding: 10px 30px;
-    font-size: 1em;
-    text-transform: uppercase;
-    position: absolute;
-    left: 4.5em;
-    color: white;
-    background-color: var(--bs-blue);
-    opacity: 0;
-    transition: all 1s;
-}
-
-.show-menu span {
-    opacity: 1;
-}
-
-header {
+.header {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -180,7 +190,7 @@ header {
 .wrapper {
     overflow: hidden;
     height: 100vh;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, 1);
 }
 
 .img-wrapper {
@@ -200,34 +210,30 @@ header {
 }
 
 .banner {
-    width: 60%;
-    font-size: 1rem;
-    top: 26vh;
-    left: 10.5em;
+    top: 30vh;
+    left: 10.5rem;
     position: absolute;
 }
 
 .banner h1 {
-    margin-bottom: 0.1em;
-    font-size: 8.5em;
+    margin: 0;
+    padding: 0;
+    font-size: 9rem;
     font-family: var(--font-primary);
     font-weight: 300;
-    text-shadow: .1em .1rem 1px rgba(0, 0, 0, .8);
-    line-height: 1.2em;
+    text-shadow: 0.5rem 0.5rem 1px rgba(0, 0, 0, .8);
     color: #ffffff;
     opacity: 0;
     animation: moveBanner 1s 0.5s forwards;
 }
 
 .banner p {
-    margin-bottom: 0.4em;
+    font-size: 4rem;
+    margin-top: 1rem;
     font-family: var(--font-secondary);
-    font-size: 3em;
-    font-weight: 400;
-    text-shadow: .1rem .1rem 1px rgba(0, 0, 0, .8);
     color: white;
     opacity: 0;
-    animation: moveBanner 1s 0.7s forwards;
+    animation: moveBanner 3s 0.7s forwards;
 }
 
 @keyframes moveBanner {
@@ -244,8 +250,8 @@ header {
     padding: 1rem 3.5rem;
     font-family: var(--font-action);
     text-transform: uppercase;
-    font-size: 1.2em;
-    text-shadow: .1em .1em 1px rgba(0, 0, 0, 1);
+    font-size: 1.2rem;
+    text-shadow: .1rem .1rem 1px rgba(0, 0, 0, 1);
     border-radius: 5px;
     border-style: none;
     letter-spacing: .2rem;
@@ -262,8 +268,8 @@ header {
 }
 
 .sidebar {
-    font-size: 1.1em;
-    z-index: 1;
+    /* font-size: 1.1rem; */
+    z-index: 5;
     background: var(--bs-dark);
     width: 26rem;
     height: 100vh;
@@ -284,26 +290,26 @@ header {
     position: absolute;
     top: 50%;
     left: 0;
-    /*transform: translate(-50%, -50%);*/
-    transform: translate(0, -50%);
+    transform: translate(0%, -50%);
 }
 
 .menu-item {
+    margin: 0.8rem 0;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
 }
 
 .menu-link {
-    margin: 0.2em;
+    margin: 0.2rem;
     justify-content: space-between;
     color: var(--bs-blue);
     font-family: var(--font-action);
-    font-size: 3em;
+    font-size: 2.5rem;
     transition: color 1s;
 }
 
-.menu-link:hover:hover {
+.menu-link:hover {
     display: block;
     padding: 0 0.5rem;
     width: 100%;
@@ -313,12 +319,12 @@ header {
 }
 
 .social-media {
-    font-size: 1rem;
+    font-size: 0.8rem;
     position: absolute;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    bottom: 2em;
+    bottom: 2rem;
 }
 
 .social-media i {
@@ -328,9 +334,9 @@ header {
     width: 2.5rem;
     height: 2.5rem;
     color: var(--bs-blue);
-    font-size: 2.5em;
+    font-size: 2.5rem;
     transition: color 1s;
-    padding: 0.7em;
+    padding: 1.7rem;
 }
 
 .social-media i:hover {
@@ -341,14 +347,13 @@ header {
 }
 
 .sessao-header {
-    background-color: ;
     display: flex;
     justify-content: center;
     padding: 0;
 }
 
 .sessao-header h1 {
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0;
     color: white;
     font-family: var(--font-primary);
     font-size: 3rem;
@@ -356,56 +361,58 @@ header {
 }
 
 .conhecimentos {
-    /* border: 0.1em solid white; */
-    font-size: 1.6rem;
+    width: 80%;
+    /* font-size: 1.6rem; */
     position: relative;
     box-sizing: border-box;
     margin: 1rem auto 0 auto;
-    width: 80%;
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
     row-gap: 1rem;
     /*display: grid;
-    grid-template-columns: repeat(autofix, minmax(30px,1fr));
-    /*grid-template-columns: repeat(auto-fit, minmax(30px,1fr));
-    grid-template-rows: repeat(6, minmax(90px,6rem));
-    row-gap: 4rem;*/
+grid-template-columns: repeat(autofix, minmax(30px,1fr));
+/*grid-template-columns: repeat(auto-fit, minmax(30px,1fr));
+grid-template-rows: repeat(6, minmax(90px,6rem));
+row-gap: 4rem;*/
 }
 
 .conhecimento-header {
+    width: 100%;
     display: flex;
     align-items: center;
 }
 
 .sessao-header h1 {
-    font-size: 4.8em;
-}
-
-.conhecimento-header i {
-    font-size: 3.2em;
-    color: var(--bs-blue);
+    font-size: 4.8rem;
 }
 
 .conhecimento-header i,
 h3 {
-    margin-left: 0.2em;
+    margin-left: 1rem;
+}
+
+.conhecimento-header i {
+    font-size: 4.5rem;
+    color: var(--bs-blue);
 }
 
 .conhecimento-header h3 {
     padding: 0;
     margin-bottom: 0;
     font-family: var(--font-secondary);
-    font-size: 2em;
+    font-size: 2.7rem;
     color: white;
 }
 
 .conhecimento-text {
-    margin-top: 0.3rem;
+    border: 1px solid var(--bs-blue);
+    margin-top: 1.6rem;
     padding: 10px;
     background-color: var(--bs-dark);
     color: var(--bs-gray-400);
+    font-size: 1.8rem;
     font-family: var(--font-secondary);
     text-align: justify;
     border-radius: 5px;
@@ -438,23 +445,20 @@ h3 {
 }
 
 .projetos {
-    border: 1px solid white;
-    font-size: 1.6em;
+    /* font-size: 1.6rem; */
     margin: 0 auto;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.1em;
-    margin-top: 0.5em;
+    gap: 0.1rem;
+    margin-top: 0.5rem;
     box-sizing: border-box;
 }
 
 .card {
-    width: 100%;
-    height: 100%;
+    width: 77%;
+    height: 90%;
     margin: 0 auto;
-    /* width: 16em;
-    height: 22em; */
     background-color: transparent;
     position: relative;
     transition: all 1s;
@@ -463,13 +467,13 @@ h3 {
 .card-img-wrapper {
     width: 100%;
     height: 100%;
-    border-radius: 0.6em;
+    border-radius: 0.6rem;
     background-color: rgba(0, 0, 0, 1);
     transition: all 1s;
 }
 
 .card-img-wrapper img {
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -483,42 +487,41 @@ h3 {
 }
 
 .card-info {
-    /*opacity: 0;
-    visibility: hidden;*/
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     bottom: 0;
-    /* transform: translate(0, 50%); */
-    padding: 3em 4em 3em 2em;
-    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, .9);
+    padding: 3rem 4rem 3rem 2rem;
+    text-shadow: 0.1rem 0.1rem 1pxrgba(0, 0, 0, .9);
     transition: all 1s;
 }
 
 .card-info h2 {
     color: white;
-    font-size: 1.3em;
+    font-size: 2.5rem;
     font-weight: 500;
+    text-shadow: 0.1rem 0.1rem 1px rgba(0, 0, 0, .8);
 }
 
 .card-info h3 {
-    font-size: 1.1em;
-    text-shadow: 0.1em 0.1em 1px rgba(0, 0, 0, .8);
+    font-size: 2rem;
+    text-shadow: 0.1rem 0.1rem 1px rgba(0, 0, 0, .8);
     color: var(--bs-blue);
 }
 
 .card-info p {
-    margin: 0.3em 0;
+    margin: 0.3rem 0;
+    font-size: 1.3rem;
     text-align: justify;
-    font-size: 0.7em;
-    width: 80%;
+    text-shadow: 0.1rem 0.1rem 1px rgba(0, 0, 0, .8);
     color: rgb(187, 187, 187);
 }
 
 .btn {
-    font-size: 0.5em;
     text-transform: uppercase;
     color: white;
     background-color: var(--bs-blue);
-    padding: 1em 2em;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 0.3rem;
 }
@@ -537,13 +540,15 @@ h3 {
 
 .sessao-contato {
     width: 80%;
-    margin: 2em auto;
+    margin: 2rem auto;
 }
 
 .contato-wrapper {
+    margin-top: 0.5rem;
     overflow: hidden;
     position: relative;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 8px white;
 }
 
 .contato-wrapper img {
@@ -564,19 +569,27 @@ h3 {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    /* border: 1px solid white; */
 }
 
 form {
-    /* border: 1px solid white; */
+    padding: 1rem;
+    font-size: 2rem;
     width: 60%;
-    font-size: 2.5em;
     color: rgba(61, 126, 238, 0.8);
 }
 
-form button {
-    font-size: 1em;
-    margin: 0.7em 0;
+.form-control {
+    font-size: 1.6rem;
+    background-color: #495057;
+}
+
+form input:focus,
+textarea:focus {
+    transition: all 1s;
+}
+
+.btn {
+    margin-top: 1rem;
 }
 
 .footer-content {
@@ -590,11 +603,11 @@ form button {
 }
 
 .footer-content p {
-    margin: 0.2em 0;
+    margin: 0.2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6em;
+    /* font-size: 1.6rem; */
     font-family: var(--font-Baloo);
     color: white;
     width: 100%;
@@ -617,116 +630,23 @@ form button {
 }
 
 .social-list i {
-    font-size: 2.5em;
+    font-size: 2.8rem;
     color: rgb(61, 126, 238);
-    padding: 0.2em;
+    padding: 0.5rem;
+    transition: all 1s;
 }
 
 .social-list i:hover {
     background-color: white;
     color: var(--bs-blue);
     border-radius: 1.5rem;
-    transition: 1s;
 }
 
 
 /* media queries */
 
-@media(max-width:967px) {
-    .projetos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 0.5rem;
-    }
-}
-
-@media (max-width: 820px) {
-    .conhecimentos {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .projetos {
-        /* border: 1px solid white; */
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .card {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-    }
-    .sessao-contato {
-        width: 80%;
-        margin: 2em auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .contato {
-        width: 100%;
-        border: 1px solid white;
-        margin: 0 auto;
-    }
-    form {
-        width: 80%;
-    }
-}
-
-@media (max-width: 582px) {
-    .banner {
-        position: absolute;
-        display: block;
-        margin: 0 auto;
-        width: 65%;
-        left: 10%;
-    }
-    .banner h1 {
-        font-size: 7em;
-    }
-    .projetos {
-        /* border: 1px solid white; */
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (max-width: 441px) {
-    .banner {
-        position: absolute;
-        display: block;
-        margin: 0 auto;
-        width: 65%;
-        left: 10%;
-    }
-    .banner h1 {
-        font-size: 6em;
-    }
-}
-
-@media (max-width: 375) {
-    .conhecimentos {
-        width: 100%;
-    }
-    .main-container {
-        width: 100%;
-    }
-    .banner h1 {
-        font-size: 0.5em;
-    }
-    .sessao-projetos {
-        display: block;
-        /* border: 1px solid white; */
-    }
-    .projetos {
-        display: block;
-        margin: 0;
-        /* border: 1px solid white; */
-        width: 100%
-    }
-    .card {
-        width: 50%
+@media (max-width:768px) {
+    html {
+        font-size: 50%;
     }
 }
